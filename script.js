@@ -16,7 +16,7 @@ for (i = 0; i < coll.length; i++) {
 
 // Logic for POST request to expensify API to return access token
 const submitHandler = () =>{
-var postURL = 'https://www.expensify.com/api?command=Authenticate'
+var postURL = 'https://cors-anywhere.herokuapp.com/https://www.expensify.com/api?command=Authenticate'
 window.fetch(postURL,{
     method: 'POST',
     mode: 'no-cors',
