@@ -31,11 +31,15 @@ headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin':'*',
 },
-}).then((res,data) => {
-    
-     res.json(data)
-console.log(data);
-        
+}).then((res) => {
+    if(res.ok){
+
+    }else{
+ return res.json().then((data) =>{
+    console.log(data);
+ });
+
+    }
  });
 
 }
