@@ -19,21 +19,19 @@ for (i = 0; i < coll.length; i++) {
 var postURL = 'https://cors-anywhere.herokuapp.com/https://www.expensify.com/api?command=Authenticate'
 fetch(postURL,{
     method: 'POST',
-    mode: 'no-cors',
     body: JSON.stringify({
         partnerName: 'applicant',
-        partnerPassword: 'd7c3119c6cdab02d68d9',
+        partnerPassword:'d7c3119c6cdab02d68d9',
         partnerUserID: 'expensifytest@mailinator.com',
-        partnerUserSecret: 'hire_me'
+        partnerUserSecret: 'hire_me',
 
 }),
 headers: {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin':'*',
+    'Content-Type': 'application/json'
 },
 }).then(res => {
-    console.log(res)
-    return res
+   
+    return res.json()
 }).then(data =>{
     console.log(data)
 });
