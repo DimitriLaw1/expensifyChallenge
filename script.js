@@ -17,7 +17,7 @@ for (i = 0; i < coll.length; i++) {
 // Logic for POST request to expensify API to return access token
  async function submitHandler (){
 var postURL = 'https://cors-anywhere.herokuapp.com/https://www.expensify.com/api?command=Authenticate'
-const response = await fetch(postURL,{
+fetch(postURL,{
     method: 'POST',
     mode: 'no-cors',
     body: JSON.stringify({
@@ -31,10 +31,12 @@ headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin':'*',
 },
+}).then(res => {
+    console.log(res)
+    return res
+}).then(data =>{
+    console.log(data)
 });
-
-
-console.log(response.body);
 
 }
 submitHandler();
