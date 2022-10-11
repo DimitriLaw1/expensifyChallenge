@@ -17,18 +17,17 @@ for (i = 0; i < coll.length; i++) {
 // Logic for POST request to expensify API to return access token
  async function submitHandler (){
 var postURL = 'https://cors-anywhere.herokuapp.com/https://www.expensify.com/api?command=Authenticate'
+const partnerPassword = 'd7c3119c6cdab02d68d9'
 fetch(postURL,{
     method: 'POST',
     body: JSON.stringify({
         partnerName: 'applicant',
-        partnerPassword:'d7c3119c6cdab02d68d9',
         partnerUserID: 'expensifytest@mailinator.com',
+        partnerPassword:partnerPassword,
         partnerUserSecret: 'hire_me',
 
 }),
-headers: {
-    'Content-Type': 'application/json'
-},
+headers: { 'Content-type': 'application/json; charset=UTF-8' }
 }).then(res => {
    
     return res.json()
